@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mapsFragment">
+
+    <fragment
+        android:id="@+id/placeFragment"
+        android:name="ru.netology.maps.ui.PlaceFragment"
+        android:label="PlaceFragment" >
+        <action
+            android:id="@+id/action_placeFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_placeFragment_to_newPlaceFragment"
+            app:destination="@id/newPlaceFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="ru.netology.maps.ui.MapsFragment"
+        android:label="MapsFragment" >
+        <action
+            android:id="@+id/action_mapsFragment_to_placeFragment"
+            app:destination="@id/placeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_mapsFragment_to_mySettingsFragment"
+            app:destination="@id/mySettingsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_mapsFragment_to_informationFragment"
+            app:destination="@id/informationFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_mapsFragment_to_newPlaceFragment"
+            app:destination="@id/newPlaceFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mySettingsFragment"
+        android:name="ru.netology.maps.ui.MySettingsFragment"
+        android:label="MySettingsFragment" />
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="ru.netology.maps.ui.InformationFragment"
+        android:label="InformationFragment" />
+    <fragment
+        android:id="@+id/newPlaceFragment"
+        android:name="ru.netology.maps.ui.NewPlaceFragment"
+        android:label="fragment_new_place"
+        tools:layout="@layout/fragment_new_place" >
+        <action
+            android:id="@+id/action_newPlaceFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_newPlaceFragment_to_placeFragment"
+            app:destination="@id/placeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
+</navigation>
